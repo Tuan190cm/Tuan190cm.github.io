@@ -1,0 +1,211 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: 0px;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+:root{
+    --Background-main-color: hsl(321, 16%, 31%, 0.2);
+    --Background-color: linear-gradient(-135deg, rgba(126, 35, 126, 0.8), rgba(51, 209, 162, 0.2));
+}
+
+.bag{
+    background-image: var(--Background-color);
+    width: 100%;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    background-size: 100%;
+}
+
+#slogan{
+    width: 100vw;
+    height: 82vh;
+    background-image: url(img/The-Logic.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6;
+}
+
+#slogan p{
+    width: 100%;
+    margin-top: 37vh;
+    text-align: center;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-size: 6rem;
+    opacity: 1;
+    text-shadow: 2px 2px 2px rgb(226, 226, 226);
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100%;
+    min-height: 8vh;
+    background-color: var(--Background-main-color);
+    font-family: 'Noto Sans TC', sans-serif;
+}
+.logo{
+    padding-left: 2vw;
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    flex: 1;
+    cursor: pointer;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    height: 100%;
+    flex: 1;
+}
+.nav-links li{
+    list-style: none;
+}
+.nav-links a{
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+    flex: 1;
+}
+
+.burger{
+    flex: 0.33;
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: rgb(226, 226, 226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.phanloai{
+    display: flex;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100%;
+    min-height: 9vh;
+    background-color: var(--Background-main-color);
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.phanloai li{
+    list-style: none;
+}
+
+.phanloai a{
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.post{
+    display: flex;
+    margin: 3rem;
+}
+
+.mypost{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 30vw;
+    background-color: var(--Background-main-color);
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.img-box{
+    flex: 1;
+    image-rendering: pixelated;
+}
+
+@media screen and (max-width: 1024px){
+    .nav-links{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: fixed;
+        right: 0px;
+        height: 74vh;
+        top: 8vh;
+        background-color: var(--Background-main-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        border-radius: 0rem 0rem 1rem 1rem;
+    }
+    .nav-links li{
+        opacity: 0;
+        background-color: var(--Background-main-color);
+        width: 100vw;
+        text-align: center;
+        border-radius: 1rem;
+    }
+    .nav-links a{
+        border: slategray;
+    }
+    .burger{
+        display: block;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
